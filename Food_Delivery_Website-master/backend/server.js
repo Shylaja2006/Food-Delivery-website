@@ -1,3 +1,4 @@
+import path from "path";
 import express  from "express"
 import cors from 'cors'
 import { connectDB } from "./config/db.js"
@@ -27,7 +28,7 @@ connectDB()
 // api endpoints
 app.use("/api/user", userRouter)
 app.use("/api/food", foodRouter)
-app.use("/images",express.static(Path2D.join(process.cwd(),"uploads")));
+app.use("/images", express.static(path.join(process.cwd(), "uploads")));
 app.use("/api/cart", cartRouter)
 app.use("/api/order",orderRouter)
 
