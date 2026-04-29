@@ -18,6 +18,11 @@ app.use(cors())
 
 // db connection
 connectDB()
+  .then(() => console.log("DB Connected"))
+  .catch((err) => {
+    console.error("DB Error:", err.message);
+    process.exit(1);
+  });
 
 // api endpoints
 app.use("/api/user", userRouter)
